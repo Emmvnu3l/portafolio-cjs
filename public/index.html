@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ecommerce - Ejercicio Final</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Pantalla de autenticacion -->
+  <div id="pantallaAuth" class="auth-container">
+    <div class="auth-box">
+      <h2 id="authTitulo">Iniciar Sesion</h2>
+      <div id="mensajeAuth" class="mensaje oculto"></div>
+      <form id="authForm">
+        <div id="campoNombre" class="form-group oculto">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <button type="submit" class="btn btn-primario" id="authBtnSubmit">Ingresar</button>
+      </form>
+      <p class="auth-toggle">
+        <span id="authTexto">No tienes cuenta?</span>
+        <button id="authToggleBtn" class="btn-link">Registrate</button>
+      </p>
+    </div>
+  </div>
+
+  <!-- App principal (oculta hasta loguearse) -->
+  <div id="appPrincipal" class="oculto">
+    <header>
+      <h1>Tienda Online</h1>
+      <div class="header-right">
+        <span id="usuarioNombre" class="usuario-badge"></span>
+        <nav>
+          <button id="btnProductos" class="active">Productos</button>
+          <button id="btnVentas">Historial de Ventas</button>
+        </nav>
+        <button id="btnLogout" class="btn btn-secundario">Cerrar Sesion</button>
+      </div>
+    </header>
+
+    <main>
+      <!-- Seccion Productos -->
+      <section id="seccionProductos">
+        <h2>Catalogo de Productos</h2>
+        <div id="mensajeProductos" class="mensaje"></div>
+        <div id="gridProductos" class="grid"></div>
+      </section>
+
+      <!-- Seccion Ventas -->
+      <section id="seccionVentas" class="oculto">
+        <h2>Historial de Ventas</h2>
+        <div id="mensajeVentas" class="mensaje"></div>
+        <div id="listaVentas"></div>
+      </section>
+    </main>
+
+    <!-- Carrito lateral -->
+    <aside id="carrito" class="carrito-panel">
+      <div class="carrito-header">
+        <h3>Carrito</h3>
+        <button id="cerrarCarrito">&times;</button>
+      </div>
+      <div id="itemsCarrito"></div>
+      <div class="carrito-footer">
+        <p><strong>Total:</strong> $<span id="totalCarrito">0</span></p>
+        <button id="btnComprar" class="btn-primario">Realizar Compra</button>
+      </div>
+    </aside>
+
+    <button id="btnAbrirCarrito" class="btn-flotante">Carrito (<span id="contadorCarrito">0</span>)</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
